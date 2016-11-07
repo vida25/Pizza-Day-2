@@ -1,0 +1,19 @@
+<template name="add_users">
+	{{#if this}}
+		<div class='table'>
+			<div class='row text-center table_header'>
+				<div class='col-md-5 col-sm-5 col-xs-5'>
+						User's name </div>
+				<div class='col-md-5 col-sm-5 col-xs-5'>Email </div>
+				<div class='col-md-2 col-sm-2 col-xs-2'>
+				</div>
+			</div>
+			{{#each user in this}}
+				{{> add_user user}}
+			{{/each}}
+		</div>
+	{{else}}
+			<h2 class='text-center'>No users available to add to the group</h2>
+	{{/if}}
+</template>
+

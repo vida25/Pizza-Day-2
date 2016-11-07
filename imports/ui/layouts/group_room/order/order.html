@@ -1,0 +1,47 @@
+<template name="order">
+	<div class="row text-center">
+		<div class="col-md-3 col-sm-3 col-lg-3 col-xs-3">Item Name</div>
+		<div class="col-md-2 col-sm-2 col-lg-2 col-xs-2">Price</div>
+		<div class="col-md-3 col-sm-3 col-lg-3 col-xs-3">
+			Description
+		</div>
+		<div class="col-md-2 col-sm-2 col-lg-2 col-xs-2">
+			Count
+		</div>
+		{{#if event_ordering}}
+			<div class="col-md-1 col-sm-1 col-lg-1 col-xs-1" >
+				Selection
+			</div>
+		{{/if}}
+	</div>
+	{{#if order_completed}}
+		{{#each item in order_completed}}
+			<div class="row text-center">
+				{{> ordered_item item}}
+			</div>
+			<hr />
+		{{/each}}
+		<div class='text-right text-warning'>
+			<span> Discount: {{discount}}</span> <span>  Total to pay: {{total_to_pay}}</span>
+		</div>
+		{{#if event_ordering}}
+		<div>
+			<button id='cancel_ordered'>Cancel Ordered</button>
+		</div>
+		{{/if}}
+	{{else}}
+		{{#each item in items}}
+			<div class="row text-center">
+				{{> order_item item}}
+			</div>
+			<hr />
+		{{/each}}
+		{{#if event_ordering}}
+		<div>
+			<button id='make_order'>Complete Order</button>
+		</div>
+		{{/if}}
+	{{/if}}
+</template>
+
+

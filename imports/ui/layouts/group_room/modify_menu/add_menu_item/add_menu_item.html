@@ -1,0 +1,18 @@
+<template name="add_menu_item">
+	<div class="row bg-success">
+		<div class="col-md-3 col-sm-3 col-lg-3 col-xs-3 text-capitalize">
+			<input type="text" class='vcenter' name='itemName' value='{{iName}}' placeholder="Item name">
+		</div>
+		<div class="col-md-3 col-sm-3 col-lg-3 col-xs-3 text-capitalize">
+			<input type="text" class='vcenter' name='price' value='{{price}}' placeholder="Price">
+		</div>
+		<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4">
+			<textarea class='vcenter' name="description" id="" cols="30" rows="10" value='{{description}}' placeholder="Description"></textarea>
+		</div>
+		<div class="col-md-2 col-sm-2 col-lg-2 col-xs-2">
+		{{#if show_save_button}}
+			<button name='save_menu_item' class='btn btn-default btn-md vcenter'>Save</button>
+		{{/if}}
+		</div>
+	</div>
+</template>

@@ -1,0 +1,10 @@
+.border-right {
+	border-right: 1px solid silver;
+}
+.border-left {
+	border-left: 1px solid silver;
+}
+
+#nav_bar_pizza_day {
+	font: 12px Arial, Tahoma;
+}

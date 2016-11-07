@@ -1,0 +1,59 @@
+<template name="create_event">
+		{{#if event_exist}}
+			{{#if subscribed}}
+				<h3 class='text-center'>Event is alredy created</h3>
+					<div class='col-lg-6 col-md-6 col-sm-6 text-right'>
+					{{#if is_owner}}
+						{{#if status_delivered}}
+							<h4  class='text-capitalize'>current status:</h4>
+						{{else}}
+							<button id='change_status_btn' class='inline btn btn-md'>Change Status</button>
+						{{/if}}
+					{{else}}<h4 class='text-capitalize'>current status:</h4>{{/if}}
+					</div>
+					<div class='col-lg-6 col-md-6 col-sm-6'>
+						<h4 class='text-capitalize'>{{current_status}}</h4>
+					</div>
+						{{#if is_owner}}
+						<div class='col-lg-6 col-md-6 col-sm-6 text-right'>
+							<label for="allow_send_email">Send email</label>
+						</div>
+						<div class='col-lg-6 col-md-6 col-sm-6'>
+							<input type="checkbox" id='allow_send_email'>
+						</div>
+						{{/if}}
+					{{#if allowed_send_email}}
+							<div class="row">
+							<div class="col-md-12 col-sm-12 text-center">
+								<div class="form-group {{#if success}} has-success {{else}} {{#if default}}has-error{{/if}} {{/if}} has-feedback">
+								  <label class="control-label" for="inputSuccess2">Please write your password here</label>
+								  <input type="password" class="form-control" id="input_password_email" aria-describedby="inputSuccess2Status">
+								  <span class="glyphicon {{#if success}} glyphicon-ok {{else}} {{#if default}} glyphicon-remove {{/if}}{{/if}}form-control-feedback" aria-hidden="true"></span>
+								  <span id="inputSuccess2Status" class="sr-only">{{#if success}}(success){{else}}{{#if default}}(error){{/if}}{{/if}}</span>
+								</div>
+							</div>
+						</div>
+						<div class='text-center'>
+							{{#if success}}
+								<button id='send_email' class='inline'>Send Email</button>
+							{{/if}}
+						</div>
+					{{/if}}
+				{{else}}
+					<div class='text-center'><button id='subscribe_event' class='inline'>Subscribe Event</button></div>
+				{{/if}}
+			{{else}}
+			{{#if is_owner}}
+			<div class='row row-fluid'>
+				<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12  text-center">
+					<h4>Create Event for group: {{groupName}}</h4>
+				</div>
+			</div>
+			<div class='row row-fluid'>
+				<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12  text-center">
+					<button id='create_event'>Create Event</button>
+				</div>
+			</div>
+			{{else}}<h3 class='text-center'>No Event in this group</h3>{{/if}}
+		{{/if}}
+</template>

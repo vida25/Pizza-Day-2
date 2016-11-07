@@ -1,0 +1,16 @@
+<template name="group_room">
+			<div class="row">
+			<div class="col-sm-9 col-md-9 col-lg-9">
+			{{> inf_about_the_group currentGroup}}
+			<hr />
+				{{#with templateConfig}}
+					{{> Template.dynamic template=name data=groupName}}
+				{{/with}}
+			</div>
+			<div class="col-sm-3 col-md-3 col-lg-3 border-left">
+				{{> right_nav_bar_groups currentGroup}}
+			</div>
+		</div>
+				{{> change_logotype currentGroup}}
+				{{> add_remove_users add_remove_users_config}}
+</template>

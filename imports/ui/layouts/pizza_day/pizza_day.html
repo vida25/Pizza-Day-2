@@ -1,0 +1,13 @@
+<template name="pizza_day">
+		<div class="row">
+			<div class="col-sm-2 col-md-2 col-lg-2 border-right">
+			<!-- nav_bar_group -->
+				{{> left_nav_bar_groups}}
+			</div>
+			<div class="col-sm-10 col-md-10 col-lg-10">
+				{{#with templateConfig}}
+					{{> Template.dynamic template=name}}
+				{{/with}}
+			</div>
+		</div>
+</template>

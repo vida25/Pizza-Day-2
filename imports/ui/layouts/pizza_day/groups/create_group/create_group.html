@@ -1,0 +1,22 @@
+<template name="createGroups">
+		<div class="row">
+			<div class="col-md-12 col-sm-12 text-center">
+				<div class="form-group {{#if success}} has-success {{else}} {{#if default}}has-error{{/if}} {{/if}} has-feedback">
+				  <label class="control-label" for="inputSuccess2">Input the group name here:</label>
+				  <input type="text" class="form-control" id="input_group_name" aria-describedby="inputSuccess2Status">
+				  <span class="glyphicon {{#if success}} glyphicon-ok {{else}} {{#if default}} glyphicon-remove {{/if}}{{/if}}form-control-feedback" aria-hidden="true"></span>
+				  <span id="inputSuccess2Status" class="sr-only">{{#if success}}(success){{else}}{{#if default}}(error){{/if}}{{/if}}</span>
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="text-center">
+		{{#if groupNoCreated}}
+			{{#if success}}
+					<button type="button" class="btn btn-primary btn-md"  id='save_group'>Save</button>
+			{{/if}}
+			{{else}}
+				<span class="text-succes glyphicon glyphicon-ok">Group succesfully created. To join it go to "Your groups"</span>
+		{{/if}}
+		</div>
+</template>

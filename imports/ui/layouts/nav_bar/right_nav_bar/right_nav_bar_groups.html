@@ -1,0 +1,28 @@
+<template name="right_nav_bar_groups">
+	<div class="btn-group-vertical" role="group" aria-label="...">
+	<figure class='text-center'>
+		<img src="{{this.img}}" class='{{#if is_owner}}logotype{{/if}}' alt="This is logotype" />
+	</figure>
+		<ul class="nav nav-pills nav-stacked" id='left_nav_bar_pizza_day'>
+			<li role="presentation"><a href="#" class='menu_items' id='create_event' data-name='create_event'>Event</a></li>
+			{{#unless event_exist}}
+				<li role="presentation"><a href="#" class='menu_items' id='modify_menu' data-name='modify_menu'>Modify Menu</a></li>
+			{{/unless}}
+			{{#if event_sub}}
+				<li role="presentation"><a href="#" id='make_order_menu'>Order</a></li>
+			{{/if}}
+			{{#if is_owner}}
+				{{#if event_sub}}
+					<li role="presentation"><a href="#" id='add_discount_menu'>Discount</a></li>
+				{{/if}}
+				{{#unless event_exist}}
+					<li role="presentation"><a href="#" id='add_remove_users' data-name='add_remove_users'>Add/Remove Users</a></li>
+				{{/unless}}
+				<li role="presentation"><a href="#" id='remove_group'>Remove Group</a></li>
+				{{#if event_exist}}
+					<li role="presentation"><a href="#" id='remove_event'>Remove Event</a></li>
+				{{/if}}
+			{{/if}}
+		</ul>
+	</div>
+</template>

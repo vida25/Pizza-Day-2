@@ -1,0 +1,19 @@
+<template name="inf_about_the_group">
+	<div class="row text-center">
+		<div class="col-sm-4 col-md-4 col-lg-4">
+			<span class='glyphicon glyphicon-user text-success' title='Users in group'>Users:({{usersInGroup}})</span>
+		</div>
+		{{#if eventExist}}
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<span class='glyphicon glyphicon-star text-success' title='Subscribers in Event'>Subscribers:({{subscribersInEvent}})</span>
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<span class='glyphicon glyphicon-ok text-success' title='Event Status'>{{eventStatus}}</span>
+			</div>
+		{{else}}
+			<div class="col-sm-2 col-md-2 col-lg-2">
+				<span class='glyphicon glyphicon-info-sign text-warning' title='No current Event'>No Event</span>
+			</div>
+		{{/if}}
+	</div>
+</template>

@@ -1,0 +1,21 @@
+<template name="header">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav header-nav-bar">
+				{{#each item in left_side}}
+					{{> navItem item}}
+				{{/each}}
+				</ul>
+				<ul class="nav navbar-nav navbar-right header-nav-bar">
+				{{#each item in right_side}}
+					{{> navItem item}}
+				{{/each}}
+					<li class="nav navbar-nav"><div class='text-center text-success' style='height: 50px; line-height: 50px;'>{{> loginButtons align='right'}}</div></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</template>
+

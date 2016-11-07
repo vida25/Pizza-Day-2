@@ -1,0 +1,12 @@
+<template name="your_groups">
+			<div class='height_120'>
+		{{#if yourGroups}}
+			{{#each yourGroups}}
+				{{> group}}
+			{{/each}}
+			{{else}}
+				<h1 class='text-center'>You have no groups</h1>
+		{{/if}}
+		</div>
+</template>
+

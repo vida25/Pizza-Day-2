@@ -1,0 +1,39 @@
+<template name="modify_menu_item">
+	<div class="row text-center">
+	{{#if modify}}
+			<div class="col-md-3 col-sm-3 col-lg-3 col-xs-3 text-capitalize">
+				<input type="text" name='itemName' class='width_100' value='{{this.itemName}}'>
+			</div>
+			<div class="col-md-3 col-sm-3 col-lg-3 col-xs-3 text-capitalize">
+				<input type="text" name='price' class='width_100' value='{{this.itemPrice}}'>
+			</div>
+			<div class="col-md-2 col-sm-2 col-lg-2 col-xs-2">
+				<textarea name="description" id="" cols="30" rows="10" class='height_50 width_100'>{{this.itemDescription}}</textarea>
+			</div>
+			{{#if show_save_button}}
+				<div class="col-md-2 col-sm-2 col-lg-2 col-xs-2">
+					<button name='save_modified' class='btn btn-xs'>Save</button>
+				</div>
+			{{/if}}
+			<div class="col-md-2 col-sm-2 col-lg-2 col-xs-2">
+				<button name='cancel' class='btn btn-xs'>Cancel</button>
+			</div>
+	{{else}}
+			<div class="col-md-3 col-sm-3 col-lg-3 col-xs-3 text-capitalize">{{this.itemName}}</div>
+			<div class="col-md-3 col-sm-3 col-lg-3 col-xs-3 text-capitalize">{{this.itemPrice}}</div>
+			<div class="col-md-3 col-sm-3 col-lg-3 col-xs-3">
+				<a tabindex="0" class="btn btn-xs btn-default" role="button" data-toggle="popover" data-trigger="focus" data-content="{{this.itemDescription}}" data-placement="left" onclick="$(this).popover('show')">>>View</a>
+			</div>
+				<div class="col-md-2 col-sm-2 col-lg-2 col-xs-2 text-center">
+					<span name='modify_item' class="glyphicon glyphicon-paperclip text-warning modify_menu_item pointer"></span>
+				</div>
+			{{#if this.allowRemoveItem}}
+				<div class="col-md-1 col-sm-1 col-lg-1 col-xs-1" >
+					<span class='glyphicon glyphicon-remove text-danger remove_menu_item pointer' name='removeItemFromMenu'>
+						</span>
+				</div>
+			{{/if}}
+	{{/if}}
+	</div>
+	<hr />
+</template>

@@ -1,0 +1,21 @@
+<template name="group">
+		<div class='row text-center'>
+			<div class='col-md-2 col-sm-2 col-xs-2 text-right' style="height: 100px">
+					<figure class="figure">
+						<img src="{{img}}" class="figure-img img-fluid img-rounded goToGroup" alt="image">
+					</figure>
+			</div>
+			<div  class='col-md-3 col-sm-3 col-xs-3 text-left'>
+						<div name='groupName' class='text-primary'>
+							<a href='#' class='goToGroup'><strong>{{groupName}}</strong></a>
+						</div>
+						<div  class="text-primary">
+							<small class='glyphicon glyphicon-user'>Users({{countUsers}})</small>
+						</div>
+						<div  class="{{#if subscribed}}text-primary{{else}}text-warning{{/if}}">
+							<small class='glyphicon glyphicon-grain'>{{#if event_exist}}Event is running{{else}} No event{{/if}}</small>
+						</div>
+			</div>
+		</div>
+		<hr />
+</template>

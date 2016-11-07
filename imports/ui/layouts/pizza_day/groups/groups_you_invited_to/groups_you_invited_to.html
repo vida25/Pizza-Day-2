@@ -1,0 +1,11 @@
+<template name="groups_you_invited_to">
+	<div class='height_120'>
+		{{#if groups_you_invited_to}}
+			{{#each groups_you_invited_to}}
+				{{> group}}
+			{{/each}}
+			{{else}}
+				<h1 class='text-center'>You are not invited to any group already</h1>
+		{{/if}}
+		</div>
+</template>
